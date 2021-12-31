@@ -1,0 +1,11 @@
+# Template file for 'dotter'
+pkgname=dotter
+version=0.12.9
+revision=1
+build_style=cargo
+short_desc="Dotfile manager and templater"
+maintainer="Jony <maybe-one-day-ubermensch@protonmail.com>"
+license="Unlicense"
+homepage="https://github.com/SuperCuber/dotter"
+distfiles="https://github.com/SuperCuber/dotter/archive/v${version}.tar.gz"
+checksum=4a6f24179a6a9495226456ed89eb770e650bee26e3f6e729bd37aaa97cd1efbd
