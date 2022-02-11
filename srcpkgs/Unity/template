@@ -1,0 +1,16 @@
+# Template file for 'Unity'
+pkgname=Unity
+version=2.5.2
+revision=1
+build_style=cmake
+configure_args="-DUNITY_EXTENSION_FIXTURE=ON -DUNITY_EXTENSION_MEMORY=ON"
+short_desc="Unit testing framework for C"
+maintainer="Jony <maybe-one-day-ubermensch@protonmail.com>"
+license="MIT"
+homepage="http://www.throwtheswitch.org/unity"
+distfiles="https://github.com/ThrowTheSwitch/Unity/archive/v${version}.tar.gz"
+checksum=3786de6c8f389be3894feae4f7d8680a02e70ed4dbcce36109c8f8646da2671a
+
+post_install() {
+	vlicense LICENSE.txt
+}
