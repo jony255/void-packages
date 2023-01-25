@@ -1,10 +1,10 @@
 # Template file for 'neovim'
 pkgname=neovim
-version=69c71c4ab44d0bf9fe5f6b6066ad5c269d1507b8
+version=15394b6855c3b17be06bf2bfbac7797d9c3ebf1d
 revision=1
 build_style=cmake
 build_helper="qemu"
-configure_args="-DCOMPILE_LUA=OFF"
+configure_args="-DCOMPILE_LUA=OFF -DCMAKE_BUILD_TYPE=Release"
 hostmakedepends="pkg-config gettext gperf LuaJIT lua51-lpeg lua51-mpack"
 makedepends="libtermkey-devel libuv-devel libvterm-devel msgpack-devel
  LuaJIT-devel libluv-devel tree-sitter-devel"
@@ -13,7 +13,7 @@ maintainer="Marcin Puc <tranzystorek.io@protonmail.com>"
 license="Apache-2.0, Vim"
 homepage="https://neovim.io"
 distfiles="https://github.com/neovim/neovim/archive/${version}.tar.gz"
-checksum=e35400123bdb03e49f4f529d37ddf976f4c3106f4fc32e9b040b54e63b649a3f
+checksum=b79212312e2eee195dcf81d8ffb7a9183dfb519ea4ee8a568777fb5118dd2dd3
 
 alternatives="
  vi:vi:/usr/bin/nvim
