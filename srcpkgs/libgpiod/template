@@ -1,0 +1,36 @@
+# Template file for 'libgpiod'
+pkgname=libgpiod
+version=2.0.1
+revision=1
+build_style=gnu-configure
+configure_args="--enable-tools --enable-bindings-cxx"
+hostmakedepends="autoconf-archive automake help2man libtool pkg-config"
+short_desc="C library and tools for interacting with the linux GPIO char device"
+maintainer="Jony <maybe-one-day-ubermensch@protonmail.com>"
+license="GPL-2.0-or-later"
+homepage="https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/"
+distfiles="https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/snapshot/libgpiod-${version}.tar.gz"
+checksum=b6eda55356160a8e73906e3d48e959ef81296787d764975b10f257e9660668e9
+
+# python3 bindings currently disabled
+pre_configure() {
+    NOCONFIGURE=1 ./autogen.sh
+}
+
+libgpiod-devel_package() {
+	short_desc+=" - development files"
+	depends="${sourcepkg}-${version}_${revision}"
+	pkg_install() {
+		vmove usr/include
+		vmove "usr/lib/*.so"
+		vmove usr/lib/pkgconfig
+	}
+}
+
+libgpiod-tools_package() {
+	short_desc+=" - tools"
+	pkg_install() {
+		vmove usr/bin
+		vmove usr/share/
+	}
+}
